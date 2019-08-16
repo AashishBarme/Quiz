@@ -1,0 +1,29 @@
+/*
+Author : Aashish Jacob Barme
+*/
+@import url('https://fonts.googleapis.com/css?family=Lexend+Deca&display=swap');
+
+	body{
+		font-size: 25px;
+		font-family: 'Lexend Deca', sans-serif;
+	}
+
+
+	input[type=radio]{
+		width:15%;
+	}
+
+	.que-ans{
+		padding: 5%;
+	    border: 1px solid #afafaf;
+	    margin-bottom:10px;
+	}
+
+	#gif-welldone{
+		display: none;
+	}
+
+	#gif-bad{
+		display: none;
+	}
+
