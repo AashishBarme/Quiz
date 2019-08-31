@@ -1,24 +1,17 @@
+var xhttp = new XMLHttpRequest();
+xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    var quiz = JSON.parse(this.responseText);
+    console.log(quiz);
+    displayQuiz(quiz);
+    document.getElementById("submit").onclick = function() {myPoint(quiz)};
+    }
+  };
+  xhttp.open("GET", "./data/data.json", true);
+  xhttp.send();
 
-let quiz = [	{
- 		"question":"What is 1 + 1 ?",
- 		"option":[
- 					4,
- 					2,
- 					7,
- 					0
- 				 ],
- 		"answer":2
-	},
-	{
- 		"question":"What is 4 - 0 ?",
- 		"option":[
- 					4,
- 					5,
- 					1,
- 					0
- 				 ],
- 		"answer":4
-	}]
+
+function displayQuiz(quiz){
 let count = 0;
 for (i=0;i<quiz.length;i++){
 	let quizOuter = document.getElementById('quiz');
@@ -50,12 +43,9 @@ for (j=0;j<4;j++){
 }
 // console.log(quizOuter.children);
 }
+}
 
-
-
-
-
-function myPoint(){
+function myPoint(quiz){
 	let count = 0;
 	for (i = 0 ; i <quiz.length ; i++){
 		for (j = 0 ; j <4 ; j++){
@@ -82,3 +72,11 @@ function myPoint(){
 		document.getElementById('gif-welldone').style.display ='none';
 		}
 	}
+
+
+document.getElementById("reload").onclick =  function(){
+	pageReload()
+}
+function pageReload() {
+	location.reload();
+}
