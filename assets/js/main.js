@@ -7,7 +7,7 @@ xhttp.onreadystatechange = function() {
     document.getElementById("submit").onclick = function() {myPoint(quiz)};
     }
   };
-  xhttp.open("GET", "./data/data.json", true);
+  xhttp.open("GET", "assets/data/data.json", true);
   xhttp.send();
 
 
@@ -27,7 +27,7 @@ for (i=0;i<quiz.length;i++){
 
 
 for (j=0;j<4;j++){
-	//Create a input type radio option 
+	//Create a input type radio option
 	let zOption = document.createElement('input');
 	zOption.setAttribute('type','radio');
 	zOption.setAttribute('id','option'+i+j);
@@ -61,14 +61,14 @@ function myPoint(quiz){
 	 			}
 	 		}
 	 	}
-	}	
-	 	document.getElementById('mark').innerHTML = count;	
+	}
+	 	document.getElementById('mark').innerHTML = count;
 	 	let checker  = quiz.length / 2;
 	 	if (count >= checker ){
 		document.getElementById('gif-welldone').style.display ='block';
 		document.getElementById('gif-bad').style.display ='none';
 		} else {
-		document.getElementById('gif-bad').style.display ='block';	
+		document.getElementById('gif-bad').style.display ='block';
 		document.getElementById('gif-welldone').style.display ='none';
 		}
 	}

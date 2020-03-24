@@ -1,30 +1,18 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Play Quiz</title>
-	  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-<body>
-
-	<section class="header">
+<?php include("inc/header.php"); ?>
+<section class="header">
 		<nav class="navbar navbar-light bg-light">
-  <a class="navbar-brand" href="#">
-    <img src="" width="30" height="30" class="d-inline-block align-top" alt="">
-   
-  </a>
-</nav>
-	</section>
+  		<a class="navbar-brand" href="#">
+    		<img src="" width="30" height="30" class="d-inline-block align-top" alt="">
+  		</a>
+		</nav>
+</section>
+
 	<section class="quiz">
 	<div class="container">
-		<div class="row">	
+		<div class="row">
 			<div class="col-md-8">
 				<!-- Quiz Pattern -->
-				<div id="quiz"> 
+				<div id="quiz">
 				</div>
 				<button id="submit" class="btn btn-primary">
 					Submit
@@ -46,6 +34,4 @@
 		</div>
 	</div>
 </section>
-<script src="js/main.js"></script>
-</body>
-</html>
+<?php include("inc/footer.php"); ?>
