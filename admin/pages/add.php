@@ -2,17 +2,8 @@
 
 <?php if(isset($_POST['question']) && isset($_POST['status1']) || isset($_POST['status2']) || isset($_POST['status3']) || isset($_POST['status4']))
 {
-	$question = $_POST['question'];
-	$answer1 = $_POST['answer1'];
-	$answer2 = $_POST['answer2'];
-	$answer3 = $_POST['answer3'];
-	$answer4 = $_POST['answer4'];
-	$status1 = empty($_POST['status1']) ? 'False' : $_POST['status1'];
-	$status2 = empty($_POST['status2']) ? 'False' : $_POST['status2'];
-	$status3 = empty($_POST['status3']) ? 'False' : $_POST['status3'];
-	$status4 = empty($_POST['status4']) ? 'False' : $_POST['status4'];
-
-	$quizClass->insertQA($question,$answer1,$status1,$answer2,$status2,$answer3,$status3,$answer4,$status4);
+	$quizClass->insertQA();
+	$helpers->homepageReload();
 }
 ?>
 

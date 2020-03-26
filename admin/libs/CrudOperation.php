@@ -47,4 +47,4 @@ class CrudOperation extends DbOperation{
 	 	$last_id = $this->link->insert_id;
 	 	return $last_id;
 	 }
-}
+}	

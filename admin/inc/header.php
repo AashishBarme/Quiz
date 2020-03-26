@@ -7,8 +7,12 @@
 	$filepath = realpath(dirname(__FILE__));
 	include_once($filepath."/../config/config.php");
 	include_once ($filepath."/../classes/QuizClass.php");
+  include_once($filepath."/../helpers/Helpers.php");
+
 
 	$quizClass = new QuizClass();
+  $helpers = new Helpers();
+  
 ?>
 <!DOCTYPE html>
 <html>
@@ -16,11 +20,12 @@
     <title>Quiz Dashboard</title>
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Bitter&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="<?php echo ADMIN_URL; ?>/assets/style.css">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-  <a class="navbar-brand" href="#">Dashboard</a>
+  <a class="navbar-brand" href="<?php echo ADMIN_URL; ?>">Dashboard</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>

@@ -7,7 +7,7 @@ xhttp.onreadystatechange = function() {
     document.getElementById("submit").onclick = function() {myPoint(quiz)};
     }
   };
-  xhttp.open("GET", "assets/data/data.json", true);
+  xhttp.open("GET", "http://localhost/php/php_quiz/admin/api/api.php", true);
   xhttp.send();
 
 

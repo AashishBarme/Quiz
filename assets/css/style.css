@@ -10,9 +10,13 @@ Author : Aashish Jacob Barme
 
 
 	input[type=radio]{
-		width:15%;
+		width:8%;
 	}
 
+	label{
+		font-size:20px;
+	}
+	
 	.que-ans{
 		padding: 5%;
 	    border: 1px solid #afafaf;
