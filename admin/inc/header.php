@@ -32,6 +32,9 @@
   <div class="collapse navbar-collapse" id="navbarNavDropdown">
     <ul class="navbar-nav">
       <li class="nav-item active">
+        <a class="nav-link" href="<?php echo SITE_URL; ?>">Back to Site <span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
         <a class="nav-link" href="<?php echo ADMIN_URL; ?>">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item dropdown">
@@ -45,4 +48,5 @@
       </li>
     </ul>
   </div>
+    <a href="<?php echo ADMIN_URL; ?>/logout.php"><button type="button" class="btn btn-danger">Logout!</button></a>
 </nav>

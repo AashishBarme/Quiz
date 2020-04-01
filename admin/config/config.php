@@ -7,3 +7,4 @@
 
 	define("APP_ROOT", dirname(dirname(__FILE__)));
 	define("ADMIN_URL","http://localhost/php/php_quiz/admin");
+	define("SITE_URL","http://localhost/php/php_quiz");

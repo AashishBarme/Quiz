@@ -30,16 +30,23 @@ class DbOperation{
 
 		$table1 = "CREATE TABLE IF NOT EXISTS questions (
 			id int(6) auto_increment primary key,
-			question varchar(30)
+			question varchar(255)
 		)";
 		$table2 = "CREATE TABLE IF NOT EXISTS answers (
-				id int(6) auto_increment primary key,
-				que_id int(6),
-				answer varchar(30),
-				status varchar(10)
-		)";
+		    id int(6) auto_increment primary key,
+			que_id int(6),
+			answer varchar(30),
+			status varchar(10)
+		)";	
+		$table3 = "CREATE TABLE IF NOT EXISTS user(
+			id int(6) auto_increment primary key,
+			username varchar(30) NOT NULL UNIQUE,
+			password varchar(255) NOT NULL,
+			create_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+			role varchar(30) NOT NULL
+	    )";
 
-		$tables = [$table1,$table2];
+		$tables = [$table1,$table2,$table3];
 		foreach ($tables as $sql)
 		{
 				$query = $this->link->query($sql);
