@@ -30,7 +30,8 @@ class DbOperation{
 
 		$table1 = "CREATE TABLE IF NOT EXISTS questions (
 			id int(6) auto_increment primary key,
-			question varchar(255)
+			question varchar(255),
+			category_id int(6)
 		)";
 		$table2 = "CREATE TABLE IF NOT EXISTS answers (
 		    id int(6) auto_increment primary key,
@@ -46,7 +47,12 @@ class DbOperation{
 			role varchar(30) NOT NULL
 	    )";
 
-		$tables = [$table1,$table2,$table3];
+	    $table4 = "CREATE TABLE IF NOT EXISTS category(
+	    	id int(6) auto_increment primary key,
+	    	category varchar(30) NOT NULL UNIQUE,
+	    	description varchar(255)
+		)";
+		$tables = [$table1,$table2,$table3,$table4];
 		foreach ($tables as $sql)
 		{
 				$query = $this->link->query($sql);

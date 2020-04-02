@@ -20,6 +20,7 @@ class QuizClass {
 	public function insertQA()
 	{
 		$question = $_POST['question'];
+		$category = $_POST['category'];
 		$answer1 = $_POST['answer1'];
 		$answer2 = $_POST['answer2'];
 		$answer3 = $_POST['answer3'];
@@ -29,7 +30,7 @@ class QuizClass {
 		$status3 = empty($_POST['status3']) ? 'False' : $_POST['status3'];
 		$status4 = empty($_POST['status4']) ? 'False' : $_POST['status4'];
 		
-	    $this->command->insert("INSERT INTO questions(question) VALUES('$question')");
+	    $this->command->insert("INSERT INTO questions(question,category_id) VALUES('$question','$category')");
 		$que_id = $this->command->last_insert_id();	
 		
 		$sql = "INSERT INTO answers
@@ -53,7 +54,7 @@ class QuizClass {
 
 	public function list()
 	{
-		$sql = 'SELECT q.id,q.question,a.answer FROM questions q INNER JOIN  answers a where q.id = a.que_id and a.status ="True"';
+		$sql = 'SELECT q.id,q.question,a.answer,c.category FROM questions q INNER JOIN  answers a on q.id = a.que_id inner join category c on c.id = q.category_id where a.status ="True"';
 		$list = $this->command->select($sql);
 		if ($list){
 			return $list;
@@ -65,7 +66,7 @@ class QuizClass {
 
 	public function getQuestion(int $id)
 	{
-	   $sql = 'SELECT id,question FROM questions WHERE id = '.$id.'';
+	   $sql = 'SELECT id,question,category_id FROM questions WHERE id = '.$id.'';
 	   $questions = $this->command->select($sql);
 	   if ($questions){
 	   	 return $questions;
@@ -90,7 +91,8 @@ class QuizClass {
 	public function updateQuestion(int $id)
 	{
 		$question = $_POST['question'];
-		$this->command->update("UPDATE questions SET question = '$question' WHERE id = $id");
+		$category_id = $_POST['category'];
+		$this->command->update("UPDATE questions SET question = '$question' , category_id = '$category_id'  WHERE id = $id");
 	}
 
 	public function updateAnswer()

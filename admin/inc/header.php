@@ -37,13 +37,22 @@
       <li class="nav-item active">
         <a class="nav-link" href="<?php echo ADMIN_URL; ?>">Home <span class="sr-only">(current)</span></a>
       </li>
-      <li class="nav-item dropdown">
+      <li class="nav-item dropdown active">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           Question
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-          <a class="dropdown-item" href="<?php echo ADMIN_URL; ?>/pages/add.php">Add</a>
-          <a class="dropdown-item" href="<?php echo ADMIN_URL; ?>/pages/list.php">List</a>
+          <a class="dropdown-item" href="<?php echo ADMIN_URL; ?>/pages/question/add.php">Add</a>
+          <a class="dropdown-item" href="<?php echo ADMIN_URL; ?>/pages/question/list.php">List</a>
+        </div>
+      </li>
+      <li class="nav-item dropdown active">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Categories
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+          <a class="dropdown-item" href="<?php echo ADMIN_URL; ?>/pages/category/add.php">Add</a>
+          <a class="dropdown-item" href="<?php echo ADMIN_URL; ?>/pages/category/list.php">List</a>
         </div>
       </li>
     </ul>
