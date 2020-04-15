@@ -1,4 +1,4 @@
-<?php define(HOME_URL,"http://localhost/php/php_quiz/"); ?>
+<?php define(HOME_URL,"http://localhost/php/php_quiz/frontend/"); ?>
 
 <!DOCTYPE html>
 <html>
