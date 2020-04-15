@@ -1,4 +1,1 @@
-# php quiz 
-This is just a demo quiz webapp with ajax,php and mysql.
-Thank You
- 
+Web app for normal question and answer.. 
