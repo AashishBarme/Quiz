@@ -5,7 +5,7 @@
 
 	  $category = new CategoryClass();
 
-	  if(isset($_POST['category']) || isset($_POST['description']))
+	  if(isset($_POST['save_data']))
 	  {
 	  	$category->add();
 	  	header('location: list.php');
@@ -31,7 +31,7 @@
 
 				  <div class="form-group row">
 				    <div class="col-sm-10">
-				      <button type="submit" class="btn btn-primary">Save</button>
+				      <button type="submit" class="btn btn-primary" name="save_data">Save</button>
 				    </div>
 				  </div>
 			</form>

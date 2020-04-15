@@ -50,6 +50,7 @@ class DbOperation{
 	    $table4 = "CREATE TABLE IF NOT EXISTS category(
 	    	id int(6) auto_increment primary key,
 	    	category varchar(30) NOT NULL UNIQUE,
+	    	slug varchar(30) NOT NULL,
 	    	description varchar(255)
 		)";
 		$tables = [$table1,$table2,$table3,$table4];

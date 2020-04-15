@@ -19,20 +19,21 @@ class QuizClass {
 
 	public function insertQA()
 	{
-		$question = $_POST['question'];
+		$questions = $_POST['question'];
 		$category = $_POST['category'];
-		$answer1 = $_POST['answer1'];
-		$answer2 = $_POST['answer2'];
-		$answer3 = $_POST['answer3'];
-		$answer4 = $_POST['answer4'];
-		$status1 = empty($_POST['status1']) ? 'False' : $_POST['status1'];
-		$status2 = empty($_POST['status2']) ? 'False' : $_POST['status2'];
-		$status3 = empty($_POST['status3']) ? 'False' : $_POST['status3'];
-		$status4 = empty($_POST['status4']) ? 'False' : $_POST['status4'];
 		
+		foreach ($questions as $count => $question)
+		{
 	    $this->command->insert("INSERT INTO questions(question,category_id) VALUES('$question','$category')");
 		$que_id = $this->command->last_insert_id();	
-		
+		$answer1 = $_POST['answer1'][$count];
+		$answer2 = $_POST['answer2'][$count];
+		$answer3 = $_POST['answer3'][$count];
+		$answer4 = $_POST['answer4'][$count];
+		$status1 = empty($_POST['status1'][$count]) ? 'False' : $_POST['status1'][$count];
+		$status2 = empty($_POST['status2'][$count]) ? 'False' : $_POST['status2'][$count];
+		$status3 = empty($_POST['status3'][$count]) ? 'False' : $_POST['status3'][$count];
+		$status4 = empty($_POST['status4'][$count]) ? 'False' : $_POST['status4'][$count];
 		$sql = "INSERT INTO answers
 		        (que_id,answer,status) 
 		       VALUES
@@ -40,7 +41,8 @@ class QuizClass {
 		       ('$que_id','$answer2','$status2'),
 		       ('$que_id','$answer3','$status3'),
 		       ('$que_id','$answer4','$status4')";
-		$inserted = $this->command->insert($sql);   
+		$inserted = $this->command->insert($sql); 
+		}  
 		if ($inserted){
 			$msg = "Insert Succesfully";
 			return $msg;

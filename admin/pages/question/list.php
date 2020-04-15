@@ -2,6 +2,7 @@
 <?php $data = $quizClass->list(); ?>
 <?php if(isset($_GET['action'])){
 	$quizClass->delete($_GET['id']);
+	 header('location:list.php');
 } ?>
 <div class="container pt-2">
 	<div class="row">
@@ -16,7 +17,9 @@
 		    </tr>
 		  </thead>
 		  <tbody>
-		  	<?php foreach ($data as $key => $item) { ?>
+		  	<?php
+		  	if(!empty($data)){
+		  	 foreach ($data as $key => $item) { ?>
 		    <tr>
 		      <th scope="row"><?= $key + 1 ; ?></th>
 		      <td><?= $item["question"]; ?></td>
@@ -27,6 +30,12 @@
 		      	<a href="list.php?id=<?php echo $item["id"]; ?>&action=del" class="btn btn-danger">Delete</a>
 		      </td>
 		    </tr>
+		    <?php }} else { ?>
+		    	<tr>
+		    		<td>
+		    		Nothing Found
+		    	</td>
+		    	</tr>
 		    <?php } ?>
 		  </tbody>
 		</table>

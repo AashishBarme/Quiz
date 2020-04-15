@@ -2,3 +2,11 @@
      background-color: #f9f9fa;
      font-family: 'Bitter', serif;
  }
+
+.answer-section {
+	padding-left: 18%;
+}
+
+.add-button-section{
+	text-align: right;
+}

@@ -20,13 +20,7 @@ if(isset($_POST['question']) || isset($_POST['status']))
 	<div class="row">
 		<div class="col-md-12">
 			 <form method="POST" style="padding-top: 20px;">
-				  <div class="form-group row">
-				    <label for="question" class="col-sm-2 col-form-label">Question</label>
-				    <div class="col-sm-10">
-				      <input type="text" class="form-control" id="question" name="question" placeholder="Write your question" value="<?=$question[0]['question']; ?>">
-				    </div>
-				  </div>
-				   <div class="form-group row">
+       			   <div class="form-group row">
 					    <label for="category" class="col-sm-2 col-form-label">Category</label>
 					    <div class="col-sm-10">
 						    <select class="form-control" id="category" name="category">
@@ -36,6 +30,14 @@ if(isset($_POST['question']) || isset($_POST['status']))
 						    </select>
 						</div>
 					</div>
+
+				  <div class="form-group row">
+				    <label for="question" class="col-sm-2 col-form-label">Question</label>
+				    <div class="col-sm-10">
+				      <input type="text" class="form-control" id="question" name="question" placeholder="Write your question" value="<?=$question[0]['question']; ?>">
+				    </div>
+				  </div>
+
 				  <div class="form-group row">
 				  	<?php foreach ($answers as $key => $item) { ?>
 				    <label for="answer" class="col-sm-2 col-form-label">Answer <?=$key+1; ?></label>

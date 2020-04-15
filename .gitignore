@@ -1,0 +1,4 @@
+api-backup/
+api/vendor/
+api/logs/*
+!/logs/README.md
