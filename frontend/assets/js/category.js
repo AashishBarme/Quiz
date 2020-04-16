@@ -1,16 +1,17 @@
+
 var url = window.location.pathname.split("/").pop();
 var xhttp = new XMLHttpRequest();
 xhttp.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
     var quiz = JSON.parse(this.responseText); 
-    // console.log(quiz);
     displayQuiz(quiz);
-    document.getElementById("submit").onclick = function() {myPoint(quiz)};
+    document.getElementById("submit").onclick = function() {
+    	myPoint(quiz)
+    };
     }
   };
-  xhttp.open("GET", "http://localhost/php/php_quiz/api/category/" + url, true);
-  xhttp.send();
-
+xhttp.open("GET", "http://localhost/php/php_quiz/api/category/" + url, true);
+xhttp.send();
 
 function displayQuiz(quiz){
 let count = 0;

@@ -19,6 +19,9 @@
   		<a class="navbar-brand" href="#">
     		<img src="" width="30" height="30" class="d-inline-block align-top" alt="">
   		</a>
+  		<a href="http://localhost/php/php_quiz/">
+  			<button type="button" class="btn btn-success">Return Home</button>
+  		</a>
 		</nav>
 </section>
 
@@ -27,6 +30,7 @@
 		<div class="row">
 			<div class="col-md-8">
 				<div id="quiz">
+					<!--All the question will be loaded here -->
 				</div>
 				<button id="submit" class="btn btn-primary">
 					Submit
@@ -49,7 +53,7 @@
 	</div>
 </section>
 
-<script src="<?= HOME_URL; ?>assets/js/main.js"></script>
+<script src="<?= HOME_URL; ?>assets/js/category.js"></script>
 </body>
 </html>
 

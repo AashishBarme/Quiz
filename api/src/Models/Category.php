@@ -9,6 +9,22 @@ class Category{
 	{
 		$this->Db = $db;
 	} 
+	
+	public function ListCategory()
+	{
+		$models = [];
+		$sql = "select category,slug from category";
+		$stmt = $this->Db->Execute($sql);
+		$result = $this->Db->FetchAllObject($stmt);
+
+		foreach ($result as $item ) {
+			$model = [];
+			$model["category"] = $item->category;
+			$model["slug"] = $item->slug;
+			array_push($models, $model);
+		}
+		return $models;
+	}
 
 	public function GetQAByCategoryName(string $name)
 	{

@@ -15,19 +15,18 @@ return function (App $app) {
 
     $app->get('/', function (Request $request, Response $response, array $args) use ($container) {
         // Sample log message
-        $container->get('logger')->info("Slim-Skeleton '/' route");
-        $questions = $container->get('db')->Execute("select * from questions where id=27");
-        $quee = $container->get('db')->FetchObject($questions);
-        return $response->withJson($quee);
+        $model = new \App\Models\Category($container->get("db"));
+        $result = $model->ListCategory();
+        return $response->withJson($result,null,JSON_PRETTY_PRINT);
     });
 
 
     // Enabling CORS
-    $app->add(function ($req, $res, $next) {
-      $response = $next($req, $res);
-      return $response
-              ->withHeader('Access-Control-Allow-Origin', 'http://localhost:4200')
-              ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
-              ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
-    });
+    // $app->add(function ($req, $res, $next) {
+    //   $response = $next($req, $res);
+    //   return $response
+    //           ->withHeader('Access-Control-Allow-Origin', 'http://localhost:4200')
+    //           ->withHeader('Access-Control-Allow-Headers', 'X-Requested-With, Content-Type, Accept, Origin, Authorization')
+    //           ->withHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, PATCH, OPTIONS');
+    // });
 };
